@@ -12,39 +12,41 @@ Para tener una idea inicial de las distribuciones marginales de los datos, se gr
 
 ![Figura de Y original](img/yInitPlot.png)
 
-Entre las distribuciones conocidas del curso, estas dos figuras se asemejan más a la distribución normal. Por esto, se decide hacer el ajuste de cada probabilidad marginal a una distribución normal. Esto se realiza mediante la definición de una función `gaussian` que acepta una lista de datos (en este caso los rangos de valores de X y Y que se proporcionan), el $\sigma$ y el $\mu$ de la distribución normal y retorna una lista con los valores correspondientes a la distribución normal con estos datos.  
+Entre las distribuciones conocidas del curso, estas dos figuras se asemejan más a la distribución normal. Por esto, se decide hacer el ajuste de cada probabilidad marginal a una distribución normal. Esto se realiza mediante la definición de una función `gaussian` que acepta una lista de datos (en este caso los rangos de valores de X y Y que se proporcionan), el <img src="https://render.githubusercontent.com/render/math?math=\sigma"> y el <img src="https://render.githubusercontent.com/render/math?math=\mu"> de la distribución normal y retorna una lista con los valores correspondientes a la distribución normal con estos datos.  
 
-Luego, se utiliza la función `curve_fit` del módulo `scipy.optimize` para obtener el $\sigma$ y el $\mu$ del ajuste correspondiente a los datos obtenidos. Se obtienen las siguientes dos gráficas con el ajuste:  
+Luego, se utiliza la función `curve_fit` del módulo `scipy.optimize` para obtener el <img src="https://render.githubusercontent.com/render/math?math=\sigma"> y el <img src="https://render.githubusercontent.com/render/math?math=\mu"> del ajuste correspondiente a los datos obtenidos. Se obtienen las siguientes dos gráficas con el ajuste:  
 
 ![Figura de X con ajuste](img/xFit.png)
 
 ![Figura de Y con ajuste](img/yFit.png)
 
+<img src="https://render.githubusercontent.com/render/math?math=">
+
 Con estos datos, se obtuvieron los siguientes parámetros de ajuste:  
 
-- $\sigma_x \approx 3.3$
-- $\mu_x \approx 9.905$
-- $\sigma_y \approx 6.03$
-- $\mu_y \approx 15.08$
+- <img src="https://render.githubusercontent.com/render/math?math=\sigma_x \approx 3.3">
+- <img src="https://render.githubusercontent.com/render/math?math=\mu_x \approx 9.905">
+- <img src="https://render.githubusercontent.com/render/math?math=\sigma_y \approx 6.03">
+- <img src="https://render.githubusercontent.com/render/math?math=\mu_y \approx 15.08">
 
 Se puede observar que las curvas de ajuste normal no calzan perfectamente con las distribuciones que se tienen, pero esto se puede deber a ruido en la medición de los datos, así como error de muestreo. La forma general de los datos calza considerablemente bien y se considera entonces que ambas distribuciones marginales realmente tienen una distribución normal. Entonces, las funciones de densidad marginales para X y Y serían descritas por:  
 
-- $f_X(x) = \frac{1}{\sqrt{2\cdot\pi\cdot3.3^2}} e^{ \frac{-(x-9.905)^2}{2\cdot 3.3^2} }$  
-- $f_Y(y) = \frac{1}{\sqrt{2\cdot\pi\cdot6.03^2}} e^{ \frac{-(y-15.08)^2}{2\cdot 6.03^2} }$  
+- <img src="https://render.githubusercontent.com/render/math?math=f_X(x) = \frac{1}{\sqrt{2\cdot\pi\cdot3.3^2}} e^{ \frac{-(x-9.905)^2}{2\cdot 3.3^2} }">
+- <img src="https://render.githubusercontent.com/render/math?math=f_Y(y) = \frac{1}{\sqrt{2\cdot\pi\cdot6.03^2}} e^{ \frac{-(y-15.08)^2}{2\cdot 6.03^2} }">
 
 ## Asignación 2: Función de densidad conjunta para dos r.v. independientes
 
 Como las dos variables aleatorias son independientes, se tiene que su densidad marginal conjunta es dada por:
 
-$$f_{X,Y}(x,y) = f_X(x)\cdot f_Y(y)$$  
+<img src="https://render.githubusercontent.com/render/math?math=f_{X,Y}(x,y) = f_X(x)\cdot f_Y(y)">
 
 Entonces se toman las funciones obtenidas en el inciso anterior y se obtiene:  
 
-$$ f_{X,Y}(x,y) = \frac{1}{\sqrt{2\cdot\pi\cdot3.3^2}} e^{ \frac{-(x-9.905)^2}{2\cdot 3.3^2} } \cdot \frac{1}{\sqrt{2\cdot\pi\cdot6.03^2}} e^{ \frac{-(y-15.08)^2}{2\cdot 6.03^2} }$$
+<img src="https://render.githubusercontent.com/render/math?math=R_{XY} = f_{X,Y}(x,y) = \frac{1}{\sqrt{2\cdot\pi\cdot3.3^2}} e^{ \frac{-(x-9.905)^2}{2\cdot 3.3^2} } \cdot \frac{1}{\sqrt{2\cdot\pi\cdot6.03^2}} e^{ \frac{-(y-15.08)^2}{2\cdot 6.03^2} }">
 
 Simplificando, esta función tiene un valor aproximado de:  
 
-$$ f_{X,Y}(x,y) = \frac{1}{2\pi \cdot 19.9 } e^{ -\frac{ (x-9.905)^2} {21.78}  - \frac{(y - 15.08)^2}{72.72} } $$
+<img src="https://render.githubusercontent.com/render/math?math=f_{X,Y}(x,y) = \frac{1}{2\pi \cdot 19.9 } e^{ -\frac{ (x-9.905)^2} {21.78}  - \frac{(y - 15.08)^2}{72.72} } ">
 
 ## Asignación 3: Correlación, covarianza y coeficiente de Pearson
 
@@ -54,9 +56,9 @@ El cuaderno de jupyter para la solución de esta asignación se halla en [Pregun
 
 La correlación se define con <img src="https://render.githubusercontent.com/render/math?math=R_{XY} = E[XY]"> e indica "cuánto se parecen dos variables aleatorias", o bien más formalmente "cuantifica el grado en el que dos cantidades están linealmente asociadas". Hay que destacar que la correlación no implica causalidad, dado que dos datos o variables pueden tener formas similares para describir fenómenos diferentes e independientes entre sí. 
 
-Para calcular la correlación en Python, se tomaron los datos del archivo [xyp.csv](xyp.csv) en un DataFrame de Pandas. Luego, se usó la definición de <img src="https://render.githubusercontent.com/render/math?math=E[XY]>, dada por:
+Para calcular la correlación en Python, se tomaron los datos del archivo [xyp.csv](xyp.csv) en un DataFrame de Pandas. Luego, se usó la definición de <img src="https://render.githubusercontent.com/render/math?math=E[XY]">, dada por:
 
-<img src="https://render.githubusercontent.com/render/math?math=\int_{-\infty}^\infty \int_{-\infty}^\infty xyf_{X,Y}(x,y) ~dx~dy">.
+<img src="https://render.githubusercontent.com/render/math?math=\int_{-\infty}^\infty \int_{-\infty}^\infty xyf_{X,Y}(x,y) dxdy">.
 
 Solo que se "traduce" a su versión discreta para trabajarla con los datos discretos que tenemos. Es decir, se toma cada par de valores de X, Y y su probabilidad, se multiplican y se suman. Esto se hace mediante la multiplicación de las columnas del dataframe obtenido (que tiene una columna con los valores de X, Y y la probabilidad asociada a ambos). Luego, se utiliza la función `sum()` de un DataFrame de pandas para sumar todos los productos, de modo que se obtiene <img src="https://render.githubusercontent.com/render/math?math=E[XY]">.$ para los datos.  
 
@@ -87,13 +89,13 @@ Como este valor es bastante pequeño, se asegura que ambas variables son indepen
 
 ### Coeficiente de correlación de Pearson
 
-El coeficiente de correlación de Pearson $\rho$ es un momento normalizado, una medida que indica la correlación entre dos variables. El valor mínimo que puede tener es -1, que indica una correlación negativa lineal total entre las variables (es decir, si una variable aumenta en una cierta cantidad, la otra disminuye proporcionalmente a esa cantidad), mientras que el valor máximo de 1 indica una correlación positiva lineal total.
+El coeficiente de correlación de Pearson <img src="https://render.githubusercontent.com/render/math?math=\rho"> es un momento normalizado, una medida que indica la correlación entre dos variables. El valor mínimo que puede tener es -1, que indica una correlación negativa lineal total entre las variables (es decir, si una variable aumenta en una cierta cantidad, la otra disminuye proporcionalmente a esa cantidad), mientras que el valor máximo de 1 indica una correlación positiva lineal total.
 
 Este momento se obtiene por la relación:
 
 <img src="https://render.githubusercontent.com/render/math?math=\rho = \frac{E[(X-\overline{X})] E[Y-\overline{Y}]}{\sigma_x\sigma_y} = \frac{C_{XY}}{\sigma_x \sigma_y}">
 
-Se obtuvo $C_{XY}$ anteriormente. Se utilizarán los valores de varianza obtenidos para la Asignación 1, que si bien corresponden al modelo teórico y se calculó $C_{XY}$ con los experimentales, debería ser una aproximación suficientemente buena para estos efectos. Se tiene:
+Se obtuvo <img src="https://render.githubusercontent.com/render/math?math=C_{XY}"> anteriormente. Se utilizarán los valores de varianza obtenidos para la Asignación 1, que si bien corresponden al modelo teórico y se calculó <img src="https://render.githubusercontent.com/render/math?math=C_{XY}"> con los experimentales, debería ser una aproximación suficientemente buena para estos efectos. Se tiene:
 
 <img src="https://render.githubusercontent.com/render/math?math=\rho \approx \frac{0.06}{3.3\cdot6.03} \approx 3.015 \cdot 10^{-3}">
 
@@ -103,14 +105,14 @@ Se ve que el valor del coeficiente obtenido es muy pequeño, lo cual es otro ind
 
 El cuaderno de Jupyter de esta asignación se halla en [Pregunta4.ipynb](Pregunta4.ipynb)
 
-Para $f_X(x)$ se tiene:
+Para <img src="https://render.githubusercontent.com/render/math?math=f_X(x)"> se tiene:
 
 ![Ajuste de X](img/xTheoCurve.png)
 
-Para $f_Y(y)$ se tiene:
+Para <img src="https://render.githubusercontent.com/render/math?math=f_Y(y)"> se tiene:
 
 ![Ajuste de Y](img/yTheoCurve.png)
 
-Para $f_{X,Y}(x,y)$ se tiene:
+Para <img src="https://render.githubusercontent.com/render/math?math=f_{X,Y}(x,y)"> se tiene:
 
 ![Conjunta](img/zTheoCurve.png)
