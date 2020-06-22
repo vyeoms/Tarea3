@@ -20,8 +20,6 @@ Luego, se utiliza la función `curve_fit` del módulo `scipy.optimize` para obte
 
 ![Figura de Y con ajuste](img/yFit.png)
 
-<img src="https://render.githubusercontent.com/render/math?math=">
-
 Con estos datos, se obtuvieron los siguientes parámetros de ajuste:  
 
 - <img src="https://render.githubusercontent.com/render/math?math=\sigma_x \approx 3.3">
