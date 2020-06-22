@@ -95,7 +95,7 @@ $$\rho = \frac{E[(X-\overline{X})] E[Y-\overline{Y}]}{\sigma_x\sigma_y} = \frac{
 
 Se obtuvo $C_{XY}$ anteriormente. Se utilizarán los valores de varianza obtenidos para la Asignación 1, que si bien corresponden al modelo teórico y se calculó $C_{XY}$ con los experimentales, debería ser una aproximación suficientemente buena para estos efectos. Se tiene:
 
-$$\rho \approx \frac{0.06}{3.3\cdot6.03} \approx 3.015 \cdot 10^{-3}$$
+<img src="https://render.githubusercontent.com/render/math?math=\rho \approx \frac{0.06}{3.3\cdot6.03} \approx 3.015 \cdot 10^{-3}">
 
 Se ve que el valor del coeficiente obtenido es muy pequeño, lo cual es otro indicador más sobre la independencia de los datos estudiados.
 
