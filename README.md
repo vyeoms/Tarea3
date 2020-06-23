@@ -68,7 +68,7 @@ Se realizaron estas dos formas en el cuaderno, para comparar los resultados (y c
 
 Con la segunda metodología se obtuvo:
 
-<img src="https://render.githubusercontent.com/render/math?math=E[X]E[Y] \approx 149,48">
+<img src="https://render.githubusercontent.com/render/math?math=E[X]E[Y] \approx 149.48">
 
 Se puede ver que ambos valores se aproximan bastante entre sí, por lo que se asegura la independencia de los datos. Entonces, se puede ver que el valor relativamente alto de correlación indica que tienen un alto grado de asociación lineal entre sí. Sin embargo, esto es la correlación entre dos variables independientes, como se ve por el hecho de que <img src="https://render.githubusercontent.com/render/math?math=E[XY] \approx E[X][Y]">.
 
