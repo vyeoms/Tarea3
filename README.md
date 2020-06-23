@@ -1,5 +1,11 @@
 # Tarea 3: Variables aleatorias múltiples
 
+Curso: IE0405-Modelos Probabilísticos de Señales y Sistemas  
+
+Estudiante: Victor Manuel Yeom Song  
+
+Carné: B78494  
+
 ## Asignación 1: Curvas de ajuste para funciones marginales
 
 El cuaderno de jupyter para la solución de esta asignación se halla en [Pregunta1.ipynb](Pregunta1.ipynb).
@@ -58,7 +64,7 @@ Para calcular la correlación en Python, se tomaron los datos del archivo [xyp.c
 
 <img src="https://render.githubusercontent.com/render/math?math=\int_{-\infty}^\infty \int_{-\infty}^\infty xyf_{X,Y}(x,y) dxdy">.
 
-Solo que se "traduce" a su versión discreta para trabajarla con los datos discretos que tenemos. Es decir, se toma cada par de valores de X, Y y su probabilidad, se multiplican y se suman. Esto se hace mediante la multiplicación de las columnas del dataframe obtenido (que tiene una columna con los valores de X, Y y la probabilidad asociada a ambos). Luego, se utiliza la función `sum()` de un DataFrame de pandas para sumar todos los productos, de modo que se obtiene <img src="https://render.githubusercontent.com/render/math?math=E[XY]">.$ para los datos.  
+Solo que se "traduce" a su versión discreta para trabajarla con los datos discretos que tenemos. Es decir, se toma cada par de valores de X, Y y su probabilidad, se multiplican y se suman. Esto se hace mediante la multiplicación de las columnas del dataframe obtenido (que tiene una columna con los valores de X, Y y la probabilidad asociada a ambos). Luego, se utiliza la función `sum()` de un DataFrame de pandas para sumar todos los productos, de modo que se obtiene <img src="https://render.githubusercontent.com/render/math?math=E[XY]">. para los datos.  
 
 Como los datos son independientes, también se tiene <img src="https://render.githubusercontent.com/render/math?math=E[XY] = E[X][Y]">. Entonces, se puede calcular el valor esperado de cada variable aleatoria por separado y multiplicar ambas, de modo que se debería obtener el mismo valor (o al menos uno aproximado, considerando errores de ruido y muestreo).  
 
