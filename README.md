@@ -66,7 +66,7 @@ Para calcular la correlación en Python, se tomaron los datos del archivo [xyp.c
 
 Solo que se "traduce" a su versión discreta para trabajarla con los datos discretos que tenemos. Es decir, se toma cada par de valores de X, Y y su probabilidad, se multiplican y se suman. Esto se hace mediante la multiplicación de las columnas del dataframe obtenido (que tiene una columna con los valores de X, Y y la probabilidad asociada a ambos). Luego, se utiliza la función `sum()` de un DataFrame de pandas para sumar todos los productos, de modo que se obtiene <img src="https://render.githubusercontent.com/render/math?math=E[XY]">. para los datos.  
 
-Como los datos son independientes, también se tiene <img src="https://render.githubusercontent.com/render/math?math=E[XY] = E[X][Y]">. Entonces, se puede calcular el valor esperado de cada variable aleatoria por separado y multiplicar ambas, de modo que se debería obtener el mismo valor (o al menos uno aproximado, considerando errores de ruido y muestreo).  
+Como los datos son independientes, también se tiene <img src="https://render.githubusercontent.com/render/math?math=E[XY] = E[X]E[Y]">. Entonces, se puede calcular el valor esperado de cada variable aleatoria por separado y multiplicar ambas, de modo que se debería obtener el mismo valor (o al menos uno aproximado, considerando errores de ruido y muestreo).  
 
 Se realizaron estas dos formas en el cuaderno, para comparar los resultados (y corroborar la independencia de las variables). Con la primer metodología se obtuvo:
 
@@ -76,7 +76,7 @@ Con la segunda metodología se obtuvo:
 
 <img src="https://render.githubusercontent.com/render/math?math=E[X]E[Y] \approx 149.48">
 
-Se puede ver que ambos valores se aproximan bastante entre sí, por lo que se asegura la independencia de los datos. Entonces, se puede ver que el valor relativamente alto de correlación indica que tienen un alto grado de asociación lineal entre sí. Sin embargo, esto es la correlación entre dos variables independientes, como se ve por el hecho de que <img src="https://render.githubusercontent.com/render/math?math=E[XY] \approx E[X][Y]">.
+Se puede ver que ambos valores se aproximan bastante entre sí, por lo que se asegura la independencia de los datos. Entonces, se puede ver que el valor relativamente alto de correlación indica que tienen un alto grado de asociación lineal entre sí. Sin embargo, esto es la correlación entre dos variables independientes, como se ve por el hecho de que <img src="https://render.githubusercontent.com/render/math?math=E[XY] \approx E[X]E[Y]">.
 
 ### Covarianza
 La covarianza es una medida que describe la manera en la que crece una variable con respecto a la otra. Una covarianza positiva con magnitud grande indica que ambas variables tienen la misma tendencia de crecimiento (si una sube, la otra también) y que un cambio grande y positivo en una implica un cambio grande y positivo en la otra, mientras que una covarianza negativa de gran magnitud indica que ambas variables tienen tendencias opuestas de crecimiento (si una sube, la otra baja) y un cambio grande y positivo en una implica un cambio grande y negativo en la otra. Una covarianza es igual a 0 cuando las variables en estudio no están correlacionadas/son independientes.
