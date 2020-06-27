@@ -85,7 +85,7 @@ Se sabe que es dada por la relación:
 
 <img src="https://render.githubusercontent.com/render/math?math=C_{XY} =  E[(X - \overline{X})(Y - \overline{Y})] = R_{XY} - E[X]E[Y]">
 
-Entonces, la covarianza se calcula con los valores de <img src="https://render.githubusercontent.com/render/math?math=E[XY]"> y <img src="https://render.githubusercontent.com/render/math?math=E[X]E[Y]"> obtenidos anteriormente. Se tiene:
+Entonces, la covarianza se calcula con los valores de <img src="https://render.githubusercontent.com/render/math?math=E[XY]"> y <img src="https://render.githubusercontent.com/render/math?math=E[X] \cdot E[Y]"> obtenidos anteriormente. Se tiene:
 
 <img src="https://render.githubusercontent.com/render/math?math=C_{XY} \approx 149.54 - 149.48 = 0.06">
 
