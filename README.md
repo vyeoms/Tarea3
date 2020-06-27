@@ -97,7 +97,7 @@ El coeficiente de correlación de Pearson <img src="https://render.githubusercon
 
 Este momento se obtiene por la relación:
 
-<img src="https://render.githubusercontent.com/render/math?math=\rho = \frac{E[(X-\overline{X})(Y-\overline{Y}]}{\sigma_x\sigma_y} = \frac{C_{XY}}{\sigma_x \sigma_y}">
+<img src="https://render.githubusercontent.com/render/math?math=\rho = \frac{E[(X-\overline{X})(Y-\overline{Y})]}{\sigma_x\sigma_y} = \frac{C_{XY}}{\sigma_x \sigma_y}">
 
 Se obtuvo <img src="https://render.githubusercontent.com/render/math?math=C_{XY}"> anteriormente. Se utilizarán los valores de varianza obtenidos para la Asignación 1, que si bien corresponden al modelo teórico y se calculó <img src="https://render.githubusercontent.com/render/math?math=C_{XY}"> con los experimentales, debería ser una aproximación suficientemente buena para estos efectos. Se tiene:
 
