@@ -33,6 +33,10 @@ Con estos datos, se obtuvieron los siguientes parámetros de ajuste:
 - <img src="https://render.githubusercontent.com/render/math?math=\sigma_y \approx 6.03">
 - <img src="https://render.githubusercontent.com/render/math?math=\mu_y \approx 15.08">
 
+Se puede ver que los resultados obtenidos se ajustan bien a los datos que se están trabajando. Por ejemplo, la media obtenida para la distribución marginal de X es de aproximadamente 9.9, lo cual se acerca bastante a la media real como se ve en la figura de distribución marginal de X obtenida, lo cual es de esperarse de una distribución normal alrededor de 10. De manera similar se ve que la media obtenida para Y se acerca a la real en la gráfica, que tiene la media alrededor de 15.
+
+Cabe resaltar que el método `curve_fit` usa un algoritmo de optimización de mínimos cuadrados, en este caso el de [Levenber-Marquardt](https://en.wikipedia.org/wiki/Levenberg%E2%80%93Marquardt_algorithm). Como se ve en la [documentación oficial](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html), los parámetros que se obtienen con esta función no son siempre iguales, pero sí son muy similares, ya que se utilizan métodos estadísticos para obtener parámetros que logren cumplir con cierta cota determinada por el algoritmo. 
+
 Se puede observar que las curvas de ajuste normal no calzan perfectamente con las distribuciones que se tienen, pero esto se puede deber a ruido en la medición de los datos, así como error de muestreo. La forma general de los datos calza considerablemente bien y se considera entonces que ambas distribuciones marginales realmente tienen una distribución normal. Entonces, las funciones de densidad marginales para X y Y serían descritas por:  
 
 - <img src="https://render.githubusercontent.com/render/math?math=f_X(x) = \frac{1}{\sqrt{2\cdot\pi\cdot3.3^2}} e^{ \frac{-(x-9.905)^2}{2\cdot 3.3^2} }">
